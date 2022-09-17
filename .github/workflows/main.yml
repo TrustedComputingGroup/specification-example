@@ -1,0 +1,39 @@
+# Render the spec to PDF on pull requests, and check in the rendered PDF on commits to main.
+
+name: Render
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/trustedcomputinggroup/pandoc:0.3.0
+    name: Render PDF
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Render
+        uses: trustedcomputinggroup/markdown@v0.2.5
+        with:
+          input-md: main.md
+          output-pdf: spec.pdf
+
+      - name: Upload samples
+        uses: actions/upload-artifact@master
+        with:
+          name: spec.pdf
+          path: spec.pdf
+
+      - name: Check in latest render
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Generate latest PDF
+          file_pattern: spec.pdf
+        if: github.event_name != 'pull_request'
