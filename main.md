@@ -1,5 +1,5 @@
 ---
-title: "Document TItle"
+title: "Document Title"
 version: 0.1
 revision: 1
 date: 2022/09/17
