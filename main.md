@@ -43,8 +43,6 @@ owners.
 
 # Change History
 
-Table: Change History
-
 | **Revision** | **Date**   | **Description** |
 | ------------ | ---------- | --------------- |
 | 0.1/1        | 2022/09/17 | Initial draft   |
@@ -53,14 +51,14 @@ Table: Change History
 
 # Document Style
 
-## Key Words
+**Key Words**
 
 The key words "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD,"
 "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" in this document's normative
 statements are to be interpreted as described in
 [RFC 2119: Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt).
 
-## Statement Type
+**Statement Type**
 
 Please note an important distinction between different sections of text
 throughout this document. There are two distinctive kinds of text: _informative
