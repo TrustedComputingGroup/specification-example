@@ -24,12 +24,15 @@ jobs:
         with:
           input-md: main.md
           output-pdf: spec.pdf
+          output-docx: spec.docx
 
       - name: Upload samples
         uses: actions/upload-artifact@master
         with:
-          name: spec.pdf
-          path: spec.pdf
+          name: preview
+          path: |
+            spec.pdf
+            spec.docx
 
       - name: Check in latest render
         uses: stefanzweifel/git-auto-commit-action@v4
