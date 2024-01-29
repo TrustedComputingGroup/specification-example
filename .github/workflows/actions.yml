@@ -30,6 +30,7 @@ jobs:
         uses: actions/upload-artifact@master
         if: ${{ github.event_name == 'pull_request' }}
         with:
+          name: spec
           path: spec.pdf
 
       - name: Upload PDF and docx to release
