@@ -26,16 +26,13 @@ jobs:
           output-pdf: spec.pdf
           output-docx: spec.docx
 
-      - name: Upload to PR
+      - name: Upload PDF to PR
         uses: actions/upload-artifact@master
         if: ${{ github.event_name == 'pull_request' }}
         with:
-          name: preview
-          path: |
-            spec.pdf
-            spec.docx
+          path: spec.pdf
 
-      - name: Upload to release
+      - name: Upload PDF and docx to release
         uses: svenstaro/upload-release-action@v2
         if: ${{ github.event_name == 'release' }}
         with:
