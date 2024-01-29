@@ -1,10 +1,6 @@
 ---
 title: "Document Title"
-version: 0.1
-revision: 1
-date: 2022/09/17
 type: SPECIFICATION
-status: DRAFT
 ...
 
 ---
@@ -43,11 +39,11 @@ owners.
 
 # Change History
 
-| **Revision** | **Date**   | **Description** |
-| ------------ | ---------- | --------------- |
-| 0.1/1        | 2022/09/17 | Initial draft   |
-
----
+--------------------------------------------------------------------------------
+**Version** **Date**   **Description**
+----------- ---------- ---------------------------------------------------------
+0.1         2024/01/29 Initial draft
+--------------------------------------------------------------------------------
 
 # Document Style
 
@@ -72,6 +68,7 @@ comment_, it can be considered a _normative statement_.
 
 EXAMPLE:
 
+::: Informative :::
 > This is the first paragraph of 1–n paragraphs containing text of the kind
 > informative comment ...
 >
@@ -81,6 +78,7 @@ EXAMPLE:
 >
 > To understand the TCG specification, the user must read the specification.
 > (This use of MUST does not require any action).
+:::::::::::::::::::
 
 ---
 
