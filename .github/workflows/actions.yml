@@ -1,0 +1,46 @@
+# Render the spec to PDF and Word on pull requests and releases, attaching the
+# outputs to the pull request / release, as appropriate.
+
+name: Render spec
+
+on:
+  pull_request:
+  release:
+    types: [published]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/trustedcomputinggroup/pandoc:0.8.1
+    name: Render PDF
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Render
+        uses: trustedcomputinggroup/markdown@v0.4.2
+        with:
+          extra-build-options: "--gitstatus --plain_quotes"
+          input-md: spec.md
+          output-pdf: spec.pdf
+          output-docx: spec.docx
+
+      - name: Upload to PR
+        uses: actions/upload-artifact@master
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          name: preview
+          path: |
+            spec.pdf
+            spec.docx
+
+      - name: Upload to release
+        uses: svenstaro/upload-release-action@v2
+        if: ${{ github.event_name == 'release' }}
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: spec.*
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
