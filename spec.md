@@ -68,17 +68,9 @@ comment_, it can be considered a _normative statement_.
 
 EXAMPLE:
 
-::: Informative :::
-This is the first paragraph of 1–n paragraphs containing text of the kind
-informative comment ...
-
-This is the second paragraph of text of the kind informative comment ...
-
-This is the nth paragraph of text of the kind informative comment ...
-
-To understand the TCG specification, the user must read the specification.
-(This use of MUST does not require any action).
-:::::::::::::::::::
+::: Informative ::::
+Reach out to <admin@trustedcomputinggroup> with any questions about this document.
+::::::::::::::::::::
 
 ---
 
@@ -93,7 +85,8 @@ To understand the TCG specification, the user must read the specification.
 # Checklist for users of this template
 
 * Ensure the repository is set to private
-* Add the correct GitHub team(s) to Collaborators* Add TCGadmin to Admin
+* Add the correct GitHub team(s) to Collaborators
+* Add TCGadmin to Admin
 * Add a branch protection rule on `main`
   * Require a pull request before merging
   * Require approvals
@@ -104,6 +97,7 @@ To understand the TCG specification, the user must read the specification.
   [markdown](https://github.com/trustedcomputinggroup/markdown) action versions
   for `actions.yml`
 * Update the document title and type in the YAML front matter
-  * For GUIDANCE or REFERENCE docs, add `template: bluetop`
 * (Optional) Do an initial release to set baseline version (e.g., if migrating
   from an existing Word doc).
+* (Optional) Review the guidance about release naming in the latest User's
+  Guide from <https://github.com/trustedcomputinggroup/pandoc>.
