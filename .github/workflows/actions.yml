@@ -39,7 +39,7 @@ jobs:
       - name: Render
         uses: trustedcomputinggroup/markdown@v0.4.2
         with:
-          input-md: spec.md
+          input-md: spec.tcg
           extra-build-options: "--versioned_filenames"
           output-pdf: spec.pdf
           output-docx: spec.docx
