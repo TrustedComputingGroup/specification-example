@@ -1,0 +1,23 @@
+# Render the document on-demand. This can be useful for producing one-off diffs.
+
+name: Render (Manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: the version or commit to render (if left empty, uses default branch)
+        required: false
+        type: string
+      diffbase:
+        description: the version or commit to diff against (if left empty, no diff is generated)
+        required: false
+        type: string
+
+jobs:
+  render:
+    uses: ./.github/workflows/render.yml
+    with:
+      workflow: manual
+      revision: ${{ inputs.revision }}
+      manual_diffbase: ${{ inputs.diffbase }}

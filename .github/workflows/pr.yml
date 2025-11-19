@@ -1,0 +1,12 @@
+# Render the document on pull requests.
+
+name: Render (Pull Request)
+
+on:
+  pull_request:
+
+jobs:
+  render:
+    uses: ./.github/workflows/render.yml
+    with:
+      workflow: pr

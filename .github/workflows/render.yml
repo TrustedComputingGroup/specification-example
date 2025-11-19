@@ -1,0 +1,36 @@
+# Reusable workflow to render the spec.
+# https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+name: Render
+
+on:
+  workflow_call:
+    inputs:
+      workflow:
+        description: the workflow to run ('pr', 'push', 'release', 'manual')
+        required: true
+        type: string
+      revision:
+        description: version to render (default is default branch)
+        required: false
+        type: string
+      manual_diffbase:
+        description: diffbase for manual workflow
+        required: false
+        type: string
+
+jobs:
+  render:
+    # When updating the version of the Pandoc toolset, update the
+    # container-version below as well.
+    uses: trustedcomputinggroup/pandoc/.github/workflows/render.yml@v0.18.14
+    with:
+      container-version: 0.18.14
+      # When renaming the file in the repository, change it here as well.
+      # For a project containing multiple parts, it may be useful to create
+      # a "render all" reusable workflow that passes each file to this workflow
+      # as an additional "input" parameter.
+      input: document.tcg
+      workflow: ${{ inputs.workflow }}
+      revision: ${{ inputs.revision }}
+      manual_diffbase: ${{ inputs.manual_diffbase }}
