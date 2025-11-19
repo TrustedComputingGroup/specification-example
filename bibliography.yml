@@ -1,0 +1,8 @@
+references:
+  - id: "alg-registry"
+    title: "TCG Algorithm Registry"
+    publisher: "Trusted Computing Group"
+    issued:
+      year: 2025
+      month: 2
+    url: "https://trustedcomputinggroup.org/resource/tcg-algorithm-registry/"

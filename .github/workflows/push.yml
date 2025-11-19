@@ -1,0 +1,14 @@
+# Render the document on pushes to main.
+
+name: Render (Push)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  render-all-parts:
+    uses: ./.github/workflows/render.yml
+    with:
+      workflow: push

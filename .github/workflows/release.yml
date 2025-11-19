@@ -1,0 +1,12 @@
+# Render the document on releases.
+
+name: Render (Release)
+
+on:
+  release:
+
+jobs:
+  render-all-parts:
+    uses: ./.github/workflows/render.yml
+    with:
+      workflow: release
